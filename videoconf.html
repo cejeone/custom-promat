@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Video Conference</title>
+</head>
+
+<body>
+
+	<!-- CSS only -->
+	<link href="./assets/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+	<link href="./style/custom-control.css" rel="stylesheet" type="text/css" />
+	<!-- JavaScript Bundle with Popper -->
+	<script src="./assets/js/jquery.min.js" type="text/javascript"></script>
+	<script src="./assets/js/bootstrap.min.js" type="text/javascript"></script>
+
+	<style>
+		body {
+			margin-top: 18px
+		}
+
+		.container {
+			padding: 33px;
+			background-color: #fff
+		}
+
+		.list-group-item.active {
+			z-index: 2;
+			color: var(--bs-list-group-active-color);
+			background-color: #0171BB;
+			border-color: #0171BB;
+		}
+	</style>
+
+	<div class="container">
+		<div class="row">
+			<div class="col-lg-7 content-active">
+				<div class="list-group">
+					<a href="#" class="list-group-item list-group-item-action flex-column align-items-start">
+						<div class="box-meet">
+							<div class="desc-meet">
+								<h5 class="room-name">[ROOM_NAME]</h5>
+								<span class="room-desc">[ROOM_DESC]</span>
+								<div class="meet-pass">
+									<span class="room-meet">Meeting ID : [ROOM_MEETINGID]</span>
+									<span class="room-pass">Passcode : [ROOM_PASSCODE]</span>
+								</div>
+							</div>
+
+							<div class="btn-group">
+								<button type="button" class="btn btn-join" value="Submit" id="[btnNo]"
+									onclick="openZoom('[ROOM_LINK]')">Join Room</button>
+							</div>
+						</div>
+
+
+					</a>
+				</div>
+			</div>
+			<div class="col-lg-5">
+				<div class="row">
+					<div class="col-md-6">
+						<h5 class="mb-1">Join Room With Code</h5>
+					</div>
+					<div class="col-md-6">
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-md-6">
+						<input type="text" name="commentUser" id="txtCode" class="form-control"
+							placeholder="Enter room code">
+					</div>
+					<div class="col-md-6">
+						<button type="button" class="btn btn-join" value="Submit" id="btnJoinByCode">Join
+							Room</button>
+					</div>
+				</div>
+
+			</div>
+
+
+		</div>
+
+		<script>
+			var urlToken = "http://localhost/services/rest/v3/sessions?scope=service&returnId=true";
+			var urlClass = "http://localhost/services/rest/v3/classes/";
+			var urlRest = "http://localhost/services/rest/v3/";
+			var urlApp = "http://localhost/";
+			var urlTest = "http://localhost:8093/app/";
+
+			var token = "";
+			var usernameCmdbuild = 'admin';
+			var passwordCmdbuild = 'admin';
+
+			var arrRoom = [];
+
+			$(document).ready(function () {
+				GetCmdbuildToken(usernameCmdbuild, passwordCmdbuild);
+			});
+
+			$('#btnJoinByCode').on('click', function () {
+				openZoomByCode($("#txtCode").val());
+			});
+
+			function GetCmdbuildToken(username, password) {
+				$.ajax({
+					url: urlToken,
+					type: 'POST',
+					contentType: 'application/json',
+					data: '{"username":"' + username + '", "password":"' + password + '"}',
+					success: function (e) {
+						token = e.data._id;
+
+						GetDataCards("room");
+					},
+					error: function (request, status, error) {
+						alert(request.responseText);
+					}
+				});
+			}
+
+			function SetRoomList() {
+				var template = $(".list-group").html();
+
+				var strTemplate = "";
+				for (var i = 0; i < arrRoom.length; i++) {
+					var obj = arrRoom[i];
+
+					if (obj.active) {
+						var objTemplate = template;
+						objTemplate = objTemplate.replace("[ROOM_NAME]", obj.Code);
+						objTemplate = objTemplate.replace("[LAST_MODIFIED]", obj._beginDate);
+						objTemplate = objTemplate.replace("[ROOM_DESC]", obj.Description);
+						objTemplate = objTemplate.replace("[ROOM_MEETINGID]", obj.meeting_id);
+						objTemplate = objTemplate.replace("[ROOM_PASSCODE]", obj.passcode);
+						objTemplate = objTemplate.replace("[ROOM_LINK]", obj.url);
+						objTemplate = objTemplate.replace("[btnNo]", "btn" + i);
+
+						strTemplate += objTemplate;
+					}
+				}
+
+				$(".list-group").html(strTemplate);
+				$(".list-group").show();
+			}
+
+			function GetDataCards(className) {
+				$.ajax({
+					url: urlClass + className + "/cards",
+					type: 'GET',
+					headers: {
+						'Cmdbuild-authorization': token
+					},
+					contentType: 'application/json',
+					data: '',
+					success: function (data) {
+						var objData = data.data;
+						arrRoom = objData;
+						// console.log(arrRoom);
+						SetRoomList();
+					},
+					error: function (request, status, error) {
+						console.log(error);
+					}
+				});
+			}
+
+			function openZoom(url) {
+				window.open(url, '_blank');
+			}
+
+			function openZoomByCode(code) {
+				window.open("https://us05web.zoom.us/j/" + code, '_blank');
+			}
+		</script>
+
+</body>
+
+</html>
