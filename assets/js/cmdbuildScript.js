@@ -89,7 +89,7 @@ function updateMapFilter()
 {
 	 power_plant = L.tileLayer.CustomWMS(url_wms, {
 		layer: 'sub_unit',
-		layers: 'promat:sub_unit',
+		layers: 'promat:v_sub_unit',
 		format: 'image/png',
 		transparent: true,
 		 maxZoom: 18,
