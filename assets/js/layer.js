@@ -33,17 +33,17 @@ var marker = L.tileLayer.CustomWMS(url_wms, {
      minZoom: 4,
 });
 
-var foto_udara = L.tileLayer(TILE_URL + "Z{z}/{y}/{x}.png", {
-     maxZoom: 18,
-     minZoom: 4,
-}); //from tile url
+// var foto_udara = L.tileLayer(TILE_URL + "Z{z}/{y}/{x}.png", {
+//      maxZoom: 18,
+//      minZoom: 4,
+// }); //from tile url
 
-// var foto_udara = L.tileLayer.CustomWMS(url_wms + "/fotoudara/wms/", {
-//     layer: 'basemap_dronemap_2995844',
-//     layers: 'fotoudara:basemap_dronemap_2995844',
-//     format: 'image/png',
-//     transparent: true
-// }); //from geoserver
+var foto_udara = L.tileLayer.CustomWMS(url_wms, {
+    layer: 'fotoudara',
+    layers: 'fotoudara:fotoudara',
+    format: 'image/png',
+    transparent: true
+}); //from geoserver
 
 var search_layer = L.tileLayer.CustomWMS();
 //});
