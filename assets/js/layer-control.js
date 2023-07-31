@@ -4,7 +4,7 @@ if(!persil_baru)
 {
 	persil_baru = L.tileLayer.CustomWMS(url_wms, {
 		layer: 'persil',
-		layers: 'promat:persil_baru',
+		layers: 'promat:v_persil_baru',
 		transparent: true,
 		format: 'image/png',
         maxZoom: 18,
@@ -17,7 +17,7 @@ if(!persil_lama)
 {
 	persil_lama = L.tileLayer.CustomWMS(url_wms, {
 		layer: 'persil',
-		layers: 'promat:persil_lama',
+		layers: 'promat:v_persil_lama',
 		transparent: true,
 		format: 'image/png',
         maxZoom: 18,
@@ -30,7 +30,7 @@ if(!pilar_batas)
 {
 	pilar_batas = L.tileLayer.CustomWMS(url_wms, {
 		layer: 'pilar_batas',
-		layers: 'promat:pilar_batas',
+		layers: 'promat:v_pilar_batas',
 		transparent: true,
 		format: 'image/png',
         maxZoom: 18,
@@ -43,7 +43,7 @@ if(!pilar_bm)
 {
 	pilar_bm = L.tileLayer.CustomWMS(url_wms, {
 		layer: 'pilar_bm',
-		layers: 'promat:pilar_bm',
+		layers: 'promat:v_pilar_bm',
 		transparent: true,
 		format: 'image/png',
         maxZoom: 18,
@@ -56,7 +56,7 @@ if(!panorama_360)
 {
 	panorama_360 = L.tileLayer.CustomWMS(url_wms, {
 		layer: 'panorama_360',
-		layers: 'promat:panorama_360',
+		layers: 'promat:v_panorama360',
 		transparent: true,
         maxZoom: 18,
         minZoom: 4,
@@ -68,7 +68,7 @@ if(!sewa_menyewa)
 {
 	sewa_menyewa = L.tileLayer.CustomWMS(url_wms, {
 		layer: 'sewamenyewa',
-		layers: 'promat:sewa_menyewa',
+		layers: 'promat:v_sewa_menyewa',
 		transparent: true,
 		format: 'image/png',
         maxZoom: 18,
@@ -81,7 +81,7 @@ if(!sengketa)
 {
 	sengketa = L.tileLayer.CustomWMS(url_wms, {
 		layer: 'sengketa',
-		layers: 'promat:sengketa',
+		layers: 'promat:v_sengketa',
 		transparent: true,
 		format: 'image/png',
         maxZoom: 18,
@@ -94,7 +94,7 @@ if(!zonasi)
 {
 	zonasi = L.tileLayer.CustomWMS(url_wms, {
 		layer: 'zonasi',
-		layers: 'promat:zonasi',
+		layers: 'promat:v_zonasi',
 		format: 'image/png',
 		transparent: true,
         maxZoom: 18,
@@ -107,7 +107,7 @@ if(!garis_pilar)
 {
 	garis_pilar = L.tileLayer.CustomWMS(url_wms, {
 		layer: 'garis_pilar',
-		layers: 'promat:garis_pilar',
+		layers: 'promat:v_garis_pilar',
 		format: 'image/png',
 		transparent: true,
         maxZoom: 18,
@@ -120,7 +120,7 @@ if(!garis_rtk)
 {
 	garis_rtk = L.tileLayer.CustomWMS(url_wms, {
 		layer: 'garis_rtk',
-		layers: 'promat:garis_rtk',
+		layers: 'promat:v_batas_rtk',
 		format: 'image/png',
 		transparent: true,
         maxZoom: 18,

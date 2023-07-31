@@ -26,7 +26,7 @@ var garis_rtk;
 
 var marker = L.tileLayer.CustomWMS(url_wms, {
      layer: "marker",
-     layers: "promat:marker",
+     layers: "promat:v_marker",
      format: "image/png",
      transparent: true,
      maxZoom: 18,
