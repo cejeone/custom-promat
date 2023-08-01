@@ -76,7 +76,7 @@ function GetUserById(userId)
 				GetDataFunctionDashboardCountPersil()
 				GetDataFunctionDashboardCountPanorama()
 				GetDataFunctionDashboardPie();
-			   	GetDataFunctionDashboardDoughnut();
+			   	// GetDataFunctionDashboardDoughnut();
 			   	GetDataBookmark();
 			},
 			error: function (request, status, error) {
