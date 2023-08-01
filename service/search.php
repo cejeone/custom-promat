@@ -1,7 +1,7 @@
 <?php
-$urlToken = "http://promat.plnindonesiapower.co.id/services/rest/v3/sessions?scope=service&returnId=true";
-$urlClass = "http://promat.plnindonesiapower.co.id/services/rest/v3/classes/";
-$urlRest = "http://promat.plnindonesiapower.co.id/services/rest/v3/";
+$urlToken = "http://10.8.10.215/services/rest/v3/sessions?scope=service&returnId=true";
+$urlClass = "http://10.8.10.215/services/rest/v3/classes/";
+$urlRest = "http://10.8.10.215/services/rest/v3/";
 
 $keyword = $_POST["q"];
 $layer = $_POST["layer"];

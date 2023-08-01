@@ -8,9 +8,9 @@ $url = $_POST["url"];
 $layer = $_POST["layer"];
 $token = $_POST["token"];
 
-$urlServer = "http://promat.plnindonesiapower.co.id";
+$urlServer = "http://10.8.10.215";
 
-$url = "http://192.168.12.178:8080/geoserver/promat/wms?SERVICE=WMS&VERSION=1.1.1&REQUEST=GetFeatureInfo&FORMAT=image%2Fpng&TRANSPARENT=true&QUERY_LAYERS=promat%3Aview_sub_unit&LAYERS=promat%3Aview_sub_unit&exceptions=application%2Fvnd.ogc.se_inimage&INFO_FORMAT=application%2Fjson&FEATURE_COUNT=50&X=50&Y=50&SRS=EPSG%3A900913&STYLES=&WIDTH=101&HEIGHT=101&BBOX=13070555.743517904%2C-707727.1914564292%2C13564091.586900594%2C-214191.34807373775";
+$url = "http://10.8.10.216/geoserver/promat/wms?SERVICE=WMS&VERSION=1.1.1&REQUEST=GetFeatureInfo&FORMAT=image%2Fpng&TRANSPARENT=true&QUERY_LAYERS=promat%3Av_sub_unit&LAYERS=promat%3Av_sub_unit&exceptions=application%2Fvnd.ogc.se_inimage&INFO_FORMAT=application%2Fjson&FEATURE_COUNT=50&X=50&Y=50&SRS=EPSG%3A900913&STYLES=&WIDTH=101&HEIGHT=101&BBOX=13070555.743517904%2C-707727.1914564292%2C13564091.586900594%2C-214191.34807373775";
 
 /*$response = get_web_page($url);
 $resArr = array();
@@ -82,34 +82,34 @@ function get_web_page_get($url,$header)
 ?>
 
      <script>
-          var url = '<?php echo $_POST["url"];?>';
-          var token = '<?php echo $_POST["token"];?>';
-          var layer = '<?php echo $_POST["layer"];?>';
-          var urlToken =
-               'http://promat.plnindonesiapower.co.id/services/rest/v3/sessions?scope=service&returnId=true';
-          var urlClass = "http://promat.plnindonesiapower.co.id/services/rest/v3/classes/";
-          var urlRest = "http://promat.plnindonesiapower.co.id/services/rest/v3/";
+     var url = '<?php echo $_POST["url"];?>';
+     var token = '<?php echo $_POST["token"];?>';
+     var layer = '<?php echo $_POST["layer"];?>';
+     var urlToken =
+          'http://10.8.10.215/services/rest/v3/sessions?scope=service&returnId=true';
+     var urlClass = "http://10.8.10.215/services/rest/v3/classes/";
+     var urlRest = "http://10.8.10.215/services/rest/v3/";
 
-          if (layer == "view_sub_unit") {
-               layer = "sub_unit";
+     if (layer == "v_sub_unit") {
+          layer = "sub_unit";
+     }
+
+     $.ajax({
+          url: urlClass + layer + "/cards",
+          type: 'GET',
+          async: true,
+          headers: {
+               'Cmdbuild-authorization': token
+          },
+          contentType: 'application/json',
+          data: '',
+          success: function(data) {
+               console.log(data);
+          },
+          error: function(request, status, error) {
+               console.log(error);
           }
-
-          $.ajax({
-               url: urlClass + layer + "/cards",
-               type: 'GET',
-               async: true,
-               headers: {
-                    'Cmdbuild-authorization': token
-               },
-               contentType: 'application/json',
-               data: '',
-               success: function (data) {
-                    console.log(data);
-               },
-               error: function (request, status, error) {
-                    console.log(error);
-               }
-          });
+     });
      </script>
 
 </body>
