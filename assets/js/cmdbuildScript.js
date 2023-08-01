@@ -108,7 +108,7 @@ function SetTenantFilter(userTenant)
 	{
 		// arrIdTenant.push("Id = "+userTenant[i]._id);
 		// arrCodeTenant.push("TenantCode = "+userTenant[i]._id);
-		arrIdTenant.push("id = "+userTenant[i]._id);
+		arrIdTenant.push("Id = "+userTenant[i]._id);
 		arrCodeTenant.push("id_tenant = "+userTenant[i]._id);
 	}
 	
