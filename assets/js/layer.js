@@ -2,7 +2,7 @@ var MAP_URL = "http://10.8.10.216/geoserver/promat/wms"; //for layer geoserver
 var url_wms = MAP_URL;
 var TILE_URL = "http://192.168.12.178/tiles/"; //foto udara tiles
 
-var power_plant;
+var sub_unit;
 
 var persil_baru;
 

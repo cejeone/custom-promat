@@ -130,16 +130,16 @@ if(!batas_rtk)
 }
 
     switch (layer) {
-        case 'power_plant':
-            power_plant.addTo(map);
-            $("input[value='info_power_plant']").prop('disabled', false);
-            map.off('click', power_plant.getFeatureInfo, power_plant);
+        case 'sub_unit':
+            sub_unit.addTo(map);
+            $("input[value='info_sub_unit']").prop('disabled', false);
+            map.off('click', sub_unit.getFeatureInfo, sub_unit);
             break;
         case 'persil_baru':
             persil_baru.addTo(map);
-            if (map.hasLayer(power_plant)) {
-                power_plant.removeFrom(map);
-                power_plant.addTo(map);
+            if (map.hasLayer(sub_unit)) {
+                sub_unit.removeFrom(map);
+                sub_unit.addTo(map);
             }
             if (map.hasLayer(persil_lama)) {
                 persil_lama.removeFrom(map);
@@ -184,9 +184,9 @@ if(!batas_rtk)
         case 'persil_lama':
             persil_lama.addTo(map);
 
-            if (map.hasLayer(power_plant)) {
-                power_plant.removeFrom(map);
-                power_plant.addTo(map);
+            if (map.hasLayer(sub_unit)) {
+                sub_unit.removeFrom(map);
+                sub_unit.addTo(map);
             }
             if (map.hasLayer(pilar_bm)) {
                 pilar_bm.removeFrom(map);
@@ -227,9 +227,9 @@ if(!batas_rtk)
             break;
         case 'pilar_bm':
             pilar_bm.addTo(map);
-            if (map.hasLayer(power_plant)) {
-                power_plant.removeFrom(map);
-                power_plant.addTo(map);
+            if (map.hasLayer(sub_unit)) {
+                sub_unit.removeFrom(map);
+                sub_unit.addTo(map);
             }
 
             if (map.hasLayer(pilar_batas)) {
@@ -269,9 +269,9 @@ if(!batas_rtk)
         case 'pilar_batas':
             pilar_batas.addTo(map);
 
-            if (map.hasLayer(power_plant)) {
-                power_plant.removeFrom(map);
-                power_plant.addTo(map);
+            if (map.hasLayer(sub_unit)) {
+                sub_unit.removeFrom(map);
+                sub_unit.addTo(map);
             }
             if (map.hasLayer(pilar_bm)) {
                 pilar_bm.removeFrom(map);
@@ -303,9 +303,9 @@ if(!batas_rtk)
             panorama_360.addTo(map);
 
 
-            if (map.hasLayer(power_plant)) {
-                power_plant.removeFrom(map);
-                power_plant.addTo(map);
+            if (map.hasLayer(sub_unit)) {
+                sub_unit.removeFrom(map);
+                sub_unit.addTo(map);
             }
             if (map.hasLayer(sewa_menyewa)) {
                 sewa_menyewa.removeFrom(map);
@@ -329,9 +329,9 @@ if(!batas_rtk)
             sewa_menyewa.addTo(map);
 
 
-            if (map.hasLayer(power_plant)) {
-                power_plant.removeFrom(map);
-                power_plant.addTo(map);
+            if (map.hasLayer(sub_unit)) {
+                sub_unit.removeFrom(map);
+                sub_unit.addTo(map);
             }
             if (map.hasLayer(pilar_bm)) {
                 pilar_bm.removeFrom(map);
@@ -377,9 +377,9 @@ if(!batas_rtk)
             sengketa.addTo(map);
 
 
-            if (map.hasLayer(power_plant)) {
-                power_plant.removeFrom(map);
-                power_plant.addTo(map);
+            if (map.hasLayer(sub_unit)) {
+                sub_unit.removeFrom(map);
+                sub_unit.addTo(map);
             }
             if (map.hasLayer(pilar_bm)) {
                 pilar_bm.removeFrom(map);
@@ -415,9 +415,9 @@ if(!batas_rtk)
         case 'zonasi':
             zonasi.addTo(map);
 
-            if (map.hasLayer(power_plant)) {
-                power_plant.removeFrom(map);
-                power_plant.addTo(map);
+            if (map.hasLayer(sub_unit)) {
+                sub_unit.removeFrom(map);
+                sub_unit.addTo(map);
             }
             if (map.hasLayer(pilar_bm)) {
                 pilar_bm.removeFrom(map);
@@ -447,9 +447,9 @@ if(!batas_rtk)
         case 'garis_pilar':
             garis_pilar.addTo(map);
 
-            if (map.hasLayer(power_plant)) {
-                power_plant.removeFrom(map);
-                power_plant.addTo(map);
+            if (map.hasLayer(sub_unit)) {
+                sub_unit.removeFrom(map);
+                sub_unit.addTo(map);
             }
             if (map.hasLayer(pilar_bm)) {
                 pilar_bm.removeFrom(map);
@@ -481,9 +481,9 @@ if(!batas_rtk)
         case 'batas_rtk':
             batas_rtk.addTo(map);
 
-            if (map.hasLayer(power_plant)) {
-                power_plant.removeFrom(map);
-                power_plant.addTo(map);
+            if (map.hasLayer(sub_unit)) {
+                sub_unit.removeFrom(map);
+                sub_unit.addTo(map);
             }
             if (map.hasLayer(pilar_bm)) {
                 pilar_bm.removeFrom(map);
@@ -517,9 +517,9 @@ if(!batas_rtk)
             marker.addTo(map);
             
 
-            if (map.hasLayer(power_plant)) {
-                power_plant.removeFrom(map);
-                power_plant.addTo(map);
+            if (map.hasLayer(sub_unit)) {
+                sub_unit.removeFrom(map);
+                sub_unit.addTo(map);
             }
             if (map.hasLayer(persil_baru)) {
                 persil_baru.removeFrom(map);
@@ -571,10 +571,10 @@ if(!batas_rtk)
 
 function layerRemoveFromMap(layer) {
     switch (layer) {
-        case 'power_plant':
-            power_plant.removeFrom(map);
-            $("input[value='info_power_plant']").prop('checked', false);
-            $("input[value='info_power_plant']").prop('disabled', true);
+        case 'sub_unit':
+            sub_unit.removeFrom(map);
+            $("input[value='info_sub_unit']").prop('checked', false);
+            $("input[value='info_sub_unit']").prop('disabled', true);
             break;
         case 'persil_baru':
             persil_baru.removeFrom(map);
@@ -643,13 +643,13 @@ function bookmark(longitude, latitude) {
 
 function clearAllLayer() {
 	
-	if(typeof power_plant != 'undefined')
+	if(typeof sub_unit != 'undefined')
 	{
-		power_plant.removeFrom(map);
+		sub_unit.removeFrom(map);
 	}
-    $("input[value='power_plant']").bootstrapSwitch('state', false);
-    $("input[value='info_power_plant']").prop('checked', false);
-    $("input[value='info_power_plant']").prop('disabled', true);
+    $("input[value='sub_unit']").bootstrapSwitch('state', false);
+    $("input[value='info_sub_unit']").prop('checked', false);
+    $("input[value='info_sub_unit']").prop('disabled', true);
 
 	if(typeof persil_baru != 'undefined')
 	{

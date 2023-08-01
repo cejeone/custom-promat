@@ -87,9 +87,9 @@ function GetUserById(userId)
 
 function updateMapFilter()
 {
-	 power_plant = L.tileLayer.CustomWMS(url_wms, {
+	 sub_unit = L.tileLayer.CustomWMS(url_wms, {
 		layer: 'sub_unit',
-		layers: 'promat:sub_unit',
+		layers: 'promat:v_sub_unit',
 		format: 'image/png',
 		transparent: true,
 		maxZoom: 18,
@@ -97,7 +97,7 @@ function updateMapFilter()
 		CQL_FILTER: idTenantFilter
 	});
 	
-	power_plant.addTo(map);
+	sub_unit.addTo(map);
 
 }
 function SetTenantFilter(userTenant)
@@ -920,7 +920,7 @@ function SetZoomLevel()
 		  // alert('no change');
 		}
 		
-		var isSubUnitChecked = $('input:checkbox[name=layer][value=power_plant]').is(':checked');
+		var isSubUnitChecked = $('input:checkbox[name=layer][value=sub_unit]').is(':checked');
 		var isPersilBaruChecked = $('input:checkbox[name=layer][value=persil_baru]').is(':checked');
 		var isPersilLamaChecked = $('input:checkbox[name=layer][value=persil_lama]').is(':checked');
 		var isPilarBmChecked = $('input:checkbox[name=layer][value=pilar_bm]').is(':checked');

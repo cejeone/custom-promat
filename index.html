@@ -324,17 +324,17 @@
                                                                  <div class="form-group">
                                                                       <div class="list-layer">
                                                                            <div class="legend">
-                                                                                <img src="http://10.8.10.216/geoserver/promat/wms/?REQUEST=GetLegendGraphic&VERSION=1.0.0&FORMAT=image/png&WIDTH=20&HEIGHT=20&LAYER=promat:sub_unit"
+                                                                                <img src="http://10.8.10.216/geoserver/promat/wms/?REQUEST=GetLegendGraphic&VERSION=1.0.0&FORMAT=image/png&WIDTH=20&HEIGHT=20&LAYER=promat:v_sub_unit"
                                                                                      alt="" data-toggle="tooltip"
                                                                                      data-placement="bottom"
                                                                                      title="Layer yang menunjukan lokasi dari sub unit PT PLN Indonesia Power">
                                                                            </div>
                                                                            <div class="md-checkbox">
-                                                                                <input id="info_power_plant"
+                                                                                <input id="info_sub_unit"
                                                                                      name="toogle_info" class="md-check"
                                                                                      type="checkbox"
-                                                                                     value="info_power_plant">
-                                                                                <label for="info_power_plant">
+                                                                                     value="info_sub_unit">
+                                                                                <label for="info_sub_unit">
                                                                                      <span></span>
                                                                                      <span class="check"></span>
                                                                                      <span class="box"></span>
@@ -347,7 +347,7 @@
                                                                                                name="layer" checked
                                                                                                class="make-switch"
                                                                                                data-size="mini"
-                                                                                               value="power_plant">
+                                                                                               value="sub_unit">
                                                                                      </div>
                                                                                 </div>
 
@@ -997,7 +997,7 @@
                $("input[name='toogle_info']").change(function () {
                     var layer = $(this).val();
                     if (this.checked) {
-                         map.off('click', power_plant.getFeatureInfo, power_plant);
+                         map.off('click', sub_unit.getFeatureInfo, sub_unit);
                          map.off('click', persil_baru.getFeatureInfo, persil_baru);
                          map.off('click', persil_lama.getFeatureInfo, persil_lama);
                          map.off('click', pilar_bm.getFeatureInfo, pilar_bm);
@@ -1009,8 +1009,8 @@
                          map.off('click', garis_pilar.getFeatureInfo, garis_pilar);
                          map.off('click', batas_rtk.getFeatureInfo, batas_rtk);
                          switch (layer) {
-                              case 'info_power_plant':
-                                   map.on('click', power_plant.getFeatureInfo, power_plant);
+                              case 'info_sub_unit':
+                                   map.on('click', sub_unit.getFeatureInfo, sub_unit);
                                    break;
                               case 'info_persil_baru':
                                    map.on('click', persil_baru.getFeatureInfo, persil_baru);
@@ -1050,8 +1050,8 @@
                          $("input[name='toogle_info']").not(this).prop('checked', false);
                     } else {
                          switch (layer) {
-                              case 'info_power_plant':
-                                   map.off('click', power_plant.getFeatureInfo, power_plant);
+                              case 'info_sub_unit':
+                                   map.off('click', sub_unit.getFeatureInfo, sub_unit);
                                    break;
                               case 'info_persil_baru':
                                    map.off('click', persil_baru.getFeatureInfo, persil_baru);
@@ -1091,7 +1091,7 @@
 
 
                setTimeout(function () {
-                    // map.off('click', power_plant.getFeatureInfo, power_plant);
+                    // map.off('click', sub_unit.getFeatureInfo, sub_unit);
                     $('.widget-content').hide();
                     // $('#widget_pilar').hide();
                     // $('#widget_penggunaan_lahan').hide();
