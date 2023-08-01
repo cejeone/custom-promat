@@ -116,10 +116,10 @@ if(!garis_pilar)
 	});
 }
 
-if(!garis_rtk)
+if(!batas_rtk)
 {
-	garis_rtk = L.tileLayer.CustomWMS(url_wms, {
-		layer: 'garis_rtk',
+	batas_rtk = L.tileLayer.CustomWMS(url_wms, {
+		layer: 'batas_rtk',
 		layers: 'promat:v_batas_rtk',
 		format: 'image/png',
 		transparent: true,
@@ -173,9 +173,9 @@ if(!garis_rtk)
                 garis_pilar.removeFrom(map);
                 garis_pilar.addTo(map);
             }
-            if (map.hasLayer(garis_rtk)) {
-                garis_rtk.removeFrom(map);
-                garis_rtk.addTo(map);
+            if (map.hasLayer(batas_rtk)) {
+                batas_rtk.removeFrom(map);
+                batas_rtk.addTo(map);
             }
 
             $("input[value='info_persil_baru']").prop('disabled', false);
@@ -216,9 +216,9 @@ if(!garis_rtk)
                 garis_pilar.removeFrom(map);
                 garis_pilar.addTo(map);
             }
-            if (map.hasLayer(garis_rtk)) {
-                garis_rtk.removeFrom(map);
-                garis_rtk.addTo(map);
+            if (map.hasLayer(batas_rtk)) {
+                batas_rtk.removeFrom(map);
+                batas_rtk.addTo(map);
             }
 
 
@@ -256,9 +256,9 @@ if(!garis_rtk)
                 garis_pilar.removeFrom(map);
                 garis_pilar.addTo(map);
             }
-            if (map.hasLayer(garis_rtk)) {
-                garis_rtk.removeFrom(map);
-                garis_rtk.addTo(map);
+            if (map.hasLayer(batas_rtk)) {
+                batas_rtk.removeFrom(map);
+                batas_rtk.addTo(map);
             }
             
 
@@ -289,9 +289,9 @@ if(!garis_rtk)
                 garis_pilar.removeFrom(map);
                 garis_pilar.addTo(map);
             }
-            if (map.hasLayer(garis_rtk)) {
-                garis_rtk.removeFrom(map);
-                garis_rtk.addTo(map);
+            if (map.hasLayer(batas_rtk)) {
+                batas_rtk.removeFrom(map);
+                batas_rtk.addTo(map);
             }
 
 
@@ -315,9 +315,9 @@ if(!garis_rtk)
                 garis_pilar.removeFrom(map);
                 garis_pilar.addTo(map);
             }
-            if (map.hasLayer(garis_rtk)) {
-                garis_rtk.removeFrom(map);
-                garis_rtk.addTo(map);
+            if (map.hasLayer(batas_rtk)) {
+                batas_rtk.removeFrom(map);
+                batas_rtk.addTo(map);
             }
 
 
@@ -361,9 +361,9 @@ if(!garis_rtk)
                 garis_pilar.removeFrom(map);
                 garis_pilar.addTo(map);
             }
-            if (map.hasLayer(garis_rtk)) {
-                garis_rtk.removeFrom(map);
-                garis_rtk.addTo(map);
+            if (map.hasLayer(batas_rtk)) {
+                batas_rtk.removeFrom(map);
+                batas_rtk.addTo(map);
             }
             if (map.hasLayer(zonasi)) {
                 zonasi.removeFrom(map);
@@ -401,9 +401,9 @@ if(!garis_rtk)
                 garis_pilar.removeFrom(map);
                 garis_pilar.addTo(map);
             }
-            if (map.hasLayer(garis_rtk)) {
-                garis_rtk.removeFrom(map);
-                garis_rtk.addTo(map);
+            if (map.hasLayer(batas_rtk)) {
+                batas_rtk.removeFrom(map);
+                batas_rtk.addTo(map);
             }
 
 
@@ -435,9 +435,9 @@ if(!garis_rtk)
                 garis_pilar.removeFrom(map);
                 garis_pilar.addTo(map);
             }
-            if (map.hasLayer(garis_rtk)) {
-                garis_rtk.removeFrom(map);
-                garis_rtk.addTo(map);
+            if (map.hasLayer(batas_rtk)) {
+                batas_rtk.removeFrom(map);
+                batas_rtk.addTo(map);
             }
 
             $("input[value='info_zonasi']").prop('disabled', false);
@@ -467,9 +467,9 @@ if(!garis_rtk)
                 sewa_menyewa.removeFrom(map);
                 sewa_menyewa.addTo(map);
             }
-            if (map.hasLayer(garis_rtk)) {
-                garis_rtk.removeFrom(map);
-                garis_rtk.addTo(map);
+            if (map.hasLayer(batas_rtk)) {
+                batas_rtk.removeFrom(map);
+                batas_rtk.addTo(map);
             }
 
 
@@ -478,8 +478,8 @@ if(!garis_rtk)
             map.off('click', garis_pilar.getFeatureInfo, garis_pilar);
             break;
         
-        case 'garis_rtk':
-            garis_rtk.addTo(map);
+        case 'batas_rtk':
+            batas_rtk.addTo(map);
 
             if (map.hasLayer(power_plant)) {
                 power_plant.removeFrom(map);
@@ -507,8 +507,8 @@ if(!garis_rtk)
             }
 
 
-            $("input[value='info_garis_rtk']").prop('disabled', false);
-            map.off('click', garis_rtk.getFeatureInfo, garis_rtk);
+            $("input[value='info_batas_rtk']").prop('disabled', false);
+            map.off('click', batas_rtk.getFeatureInfo, batas_rtk);
             break;
         
 
@@ -557,9 +557,9 @@ if(!garis_rtk)
                 garis_pilar.removeFrom(map);
                 garis_pilar.addTo(map);
             }
-            if (map.hasLayer(garis_rtk)) {
-                garis_rtk.removeFrom(map);
-                garis_rtk.addTo(map);
+            if (map.hasLayer(batas_rtk)) {
+                batas_rtk.removeFrom(map);
+                batas_rtk.addTo(map);
             }
 
             
@@ -621,10 +621,10 @@ function layerRemoveFromMap(layer) {
             $("input[value='info_garis_pilar']").prop('checked', false);
             $("input[value='info_garis_pilar']").prop('disabled', true);
             break;
-        case 'garis_rtk':
-            garis_rtk.removeFrom(map);
-            $("input[value='info_garis_rtk']").prop('checked', false);
-            $("input[value='info_garis_rtk']").prop('disabled', true);
+        case 'batas_rtk':
+            batas_rtk.removeFrom(map);
+            $("input[value='info_batas_rtk']").prop('checked', false);
+            $("input[value='info_batas_rtk']").prop('disabled', true);
             break;
         case 'foto_udara':
             foto_udara.removeFrom(map);
@@ -745,14 +745,14 @@ function clearAllLayer() {
     $("input[value='info_garis_pilar']").prop('checked', false);
     $("input[value='info_garis_pilar']").prop('disabled', true);
 
-	if(typeof garis_rtk != 'undefined')
+	if(typeof batas_rtk != 'undefined')
 	{
-		garis_rtk.removeFrom(map);
+		batas_rtk.removeFrom(map);
 	}
 	
-    $("input[value='garis_rtk']").bootstrapSwitch('state', false);
-    $("input[value='info_garis_rtk']").prop('checked', false);
-    $("input[value='info_garis_rtk']").prop('disabled', true);
+    $("input[value='batas_rtk']").bootstrapSwitch('state', false);
+    $("input[value='info_batas_rtk']").prop('checked', false);
+    $("input[value='info_batas_rtk']").prop('disabled', true);
 
 
 }

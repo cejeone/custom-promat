@@ -22,7 +22,7 @@ var zonasi;
 
 var garis_pilar;
 
-var garis_rtk;
+var batas_rtk;
 
 var marker = L.tileLayer.CustomWMS(url_wms, {
      layer: "marker",

@@ -655,11 +655,11 @@
                                                                                      data-placement="bottom" title=".">
                                                                            </div>
                                                                            <div class="md-checkbox">
-                                                                                <input id="info_garis_rtk"
+                                                                                <input id="info_batas_rtk"
                                                                                      name="toogle_info" class="md-check"
                                                                                      type="checkbox" disabled=""
-                                                                                     value="info_garis_rtk">
-                                                                                <label for="info_garis_rtk">
+                                                                                     value="info_batas_rtk">
+                                                                                <label for="info_batas_rtk">
                                                                                      <span></span>
                                                                                      <span class="check"></span>
                                                                                      <span class="box"></span>
@@ -672,7 +672,7 @@
                                                                                                name="layer"
                                                                                                class="make-switch"
                                                                                                data-size="mini"
-                                                                                               value="garis_rtk">
+                                                                                               value="batas_rtk">
                                                                                      </div>
                                                                                 </div>
                                                                            </div>
@@ -1008,7 +1008,7 @@
                          map.off('click', sengketa.getFeatureInfo, sengketa);
                          map.off('click', zonasi.getFeatureInfo, zonasi);
                          map.off('click', garis_pilar.getFeatureInfo, garis_pilar);
-                         map.off('click', garis_rtk.getFeatureInfo, garis_rtk);
+                         map.off('click', batas_rtk.getFeatureInfo, batas_rtk);
                          switch (layer) {
                               case 'info_power_plant':
                                    map.on('click', power_plant.getFeatureInfo, power_plant);
@@ -1040,8 +1040,8 @@
                               case 'info_garis_pilar':
                                    map.on('click', garis_pilar.getFeatureInfo, garis_pilar);
                                    break;
-                              case 'info_garis_rtk':
-                                   map.on('click', garis_rtk.getFeatureInfo, garis_rtk);
+                              case 'info_batas_rtk':
+                                   map.on('click', batas_rtk.getFeatureInfo, batas_rtk);
                                    break;
                                    // case 'foto_udara':
                                    //      map.on('click', foto_udara.getFeatureInfo, foto_udara);
@@ -1081,8 +1081,8 @@
                               case 'info_garis_pilar':
                                    map.off('click', garis_pilar.getFeatureInfo, garis_pilar);
                                    break;
-                              case 'info_garis_rtk':
-                                   map.off('click', garis_rtk.getFeatureInfo, garis_rtk);
+                              case 'info_batas_rtk':
+                                   map.off('click', batas_rtk.getFeatureInfo, batas_rtk);
                                    break;
 
 

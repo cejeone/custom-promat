@@ -452,7 +452,7 @@ L.TileLayer.CustomWMS = L.TileLayer.WMS.extend({
 													</table>
 												</div>`;
 							}			
-							if (layerName == 'garis_rtk') 
+							if (layerName == 'batas_rtk') 
 							{
 								popupHtml =
 												`<H5 class="title-popup text-center mb-3">` + itemData.Description + `</H5>
