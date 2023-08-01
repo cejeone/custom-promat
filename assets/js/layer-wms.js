@@ -117,7 +117,7 @@ L.TileLayer.CustomWMS = L.TileLayer.WMS.extend({
 											</tr>										
 											<tr>
 												<td>Sub Unit</td>
-												<td>` + itemData._kode_sub_unit_description + `</td>
+												<td>` + itemData._sub_unit_description + `</td>
 											</tr>
 											
 											<tr>
@@ -138,7 +138,7 @@ L.TileLayer.CustomWMS = L.TileLayer.WMS.extend({
 											</tr>
 											<tr>
 												<td>Kondisi</td>
-												<td>` + itemData._kondisi_description + `</td>
+												<td>` + itemData._kondisi_pilar_description + `</td>
 											</tr>
 											<tr>
 												<td>Status Pilar</td>
@@ -175,7 +175,10 @@ L.TileLayer.CustomWMS = L.TileLayer.WMS.extend({
 															<td>Label</td>
 															<td>` + itemData.Description + `</td>
 														</tr>
-														
+														<tr>
+															<td>Sub Unit</td>
+															<td>` + itemData._sub_unit_description + `</td>
+														</tr>
 														<tr>
 															<td>Lintang</td>
 															<td>` + itemData.koordinat_lintang + `</td>
@@ -194,7 +197,11 @@ L.TileLayer.CustomWMS = L.TileLayer.WMS.extend({
 														</tr>
 														<tr>
 															<td>Kondisi</td>
-															<td>` + itemData._kondisi_description + `</td>
+															<td>` + itemData._kondisi_pilar_description + `</td>
+														</tr>
+														<tr>
+															<td>Status Pilar</td>
+															<td>` + itemData._status_pilar_description + `</td>
 														</tr>
 														<tr>
 															<td>Detail</td>
@@ -231,10 +238,21 @@ L.TileLayer.CustomWMS = L.TileLayer.WMS.extend({
 															<td>Nomor Peta</td>
 															<td>` + itemData.nomor_peta + `</td>
 														</tr>
-														
 														<tr>
-															<td>Kecamatan</td>
-															<td>` + itemData._kecamatan_description + `</td>
+															<td>Luas Tanah</td>
+															<td>` + itemData.luas_tanah + `</td>
+														</tr>
+														<tr>
+															<td>Area</td>
+															<td>` + itemData.area + `</td>
+														</tr>
+														<tr>
+															<td>Status Persil</td>
+															<td>` + itemData._status_persil_description + `</td>
+														</tr>
+														<tr>
+															<td>Sub Unit</td>
+															<td>` + itemData._sub_unit_description + `</td>
 														</tr>
 														<tr>
 															<td>Detail</td>
@@ -324,6 +342,10 @@ L.TileLayer.CustomWMS = L.TileLayer.WMS.extend({
 															<td>` + itemData.Description + `</td>
 														</tr>
 														<tr>
+															<td>Sub Unit</td>
+															<td>` + itemData._sub_unit_description + `</td>
+														</tr>
+														<tr>
 															<td>Jenis Lahan</td>
 															<td>` + itemData.jenis_lahan + `</td>
 														</tr>
@@ -338,6 +360,10 @@ L.TileLayer.CustomWMS = L.TileLayer.WMS.extend({
 														<tr>
 															<td>Tanggal</td>
 															<td>` + itemData.tanggal + `</td>
+														</tr>
+														<tr>
+															<td>Tipe Zonasi</td>
+															<td>` + itemData._tipe_zonasi_description + `</td>
 														</tr>
 														<tr>
 															<td>Detail</td>
