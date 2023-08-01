@@ -93,7 +93,8 @@ function updateMapFilter()
 		format: 'image/png',
 		transparent: true,
 		maxZoom: 18,
-		minZoom: 4,
+		 minZoom: 4,
+		crossOrigin: true,
 		CQL_FILTER: idTenantFilter
 	});
 	
