@@ -99,7 +99,6 @@ if(!zonasi)
 		transparent: true,
         maxZoom: 18,
         minZoom: 4,
-        crossOrigin: true,
 		CQL_FILTER: tenantFilter
 	});
 }
