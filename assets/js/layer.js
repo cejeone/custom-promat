@@ -42,7 +42,9 @@ var foto_udara = L.tileLayer.CustomWMS(url_wms, {
     layer: 'fotoudara',
     layers: 'fotoudara:fotoudara',
     format: 'image/png',
-    transparent: true
+    transparent: true,
+    maxZoom: 18,
+    minZoom: 4,
 }); //from geoserver
 
 var search_layer = L.tileLayer.CustomWMS();
