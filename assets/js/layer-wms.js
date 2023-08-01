@@ -41,7 +41,8 @@ L.TileLayer.CustomWMS = L.TileLayer.WMS.extend({
 		
 		$.ajax({
             url: url,
-            type: 'get',
+		  type: 'get',
+		  contentType: 'application/json',
             dataType: 'json',
             success: function (data, status, xhr) 
 			{
